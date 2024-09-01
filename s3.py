@@ -1,7 +1,7 @@
 import requests
 
 # URL pública del archivo en el bucket S3
-url = 'https://edxtfidf.s3.amazonaws.com/EdX.csv'
+url = 'https://edxtfidf2.s3.amazonaws.com/EdX.csv'
 
 
 # Descargar el archivo
