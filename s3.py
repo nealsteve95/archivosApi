@@ -1,11 +1,16 @@
 import requests
 
-url = 'https://edxtfidf.s3.amazonaws.com/EDX.csv'
+# URL pública del archivo en el bucket S3
+url = 'https://edxtfidf.s3.amazonaws.com/EdX.csv'
 
-respoonse = requests.get(url)
-if respoonse.status_code == 200:
-    with open('EdX.csv','wb') as file:
-        file.write(respoonse.content)
-    print('Archivo descargado con exito')
+
+# Descargar el archivo
+response = requests.get(url)
+
+if response.status_code == 200:
+    # Guardar el archivo localmente
+    with open('EdX.csv', 'wb') as file:
+        file.write(response.content)
+    print('Archivo descargado con éxito')
 else:
-    print('Error al descargar el archivo:',respoonse.status_code)
+    print('Error al descargar el archivo:', response.status_code)
